@@ -27,7 +27,7 @@ public class CouponService {
     @Transactional
     public CouponDTO insert(CouponDTO dto) {
         Coupon coupon =
-                Coupon.create(dto.getCode(), dto.getDescription(), dto.getExpirationDate(), dto.getDiscountValue(), dto.getPublished());
+                Coupon.create(dto.getCode(), dto.getDescription(), dto.getExpirationDate(), dto.getDiscountValue(), dto.isPublished());
 
         return new CouponDTO(repository.save(coupon));
     }

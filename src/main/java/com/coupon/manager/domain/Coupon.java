@@ -6,7 +6,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -24,7 +23,6 @@ import static com.coupon.manager.domain.enumeration.CouponStatusEnum.DELETED;
 public class Coupon {
 
     @Id
-    @GeneratedValue
     private UUID id;
 
     @Column(unique = true)
@@ -50,6 +48,13 @@ public class Coupon {
         this.status = status;
         this.published = published;
         this.redeemed = redeemed;
+    }
+
+    public CouponStatusEnum getStatus() {
+        if (Instant.now().isAfter(Instant.parse(this.expirationDate)) && CouponStatusEnum.ACTIVE.equals(this.status)) {
+            this.status = CouponStatusEnum.INACTIVE;
+        }
+        return status;
     }
 
     public static Coupon create(String code,
