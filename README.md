@@ -93,6 +93,12 @@ http://localhost:8080
 
 # Endpoints
 
+Swagger da API disponível em:
+
+```text
+http://localhost:8080/swagger-ui/index.html#/
+```
+
 ## Buscar cupom por ID
 
 ### Request
