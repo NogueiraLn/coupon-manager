@@ -1,0 +1,3 @@
+INSERT INTO tb_coupon (id, code, description, expiration_date, discount_value, status, published, redeemed) VALUES ('e78763ed-57f3-46a1-9512-c3476e8e5c5e','ABC033','Coupon testing','2028-07-30T17:18:46.577',0.8,'ACTIVE',false,false);
+INSERT INTO tb_coupon (id, code, description, expiration_date, discount_value, status, published, redeemed) VALUES ('b2d2c9c1-7d4e-4f8a-9c11-2c1d8a9a1111','DEF456','Coupon to new users.','2029-08-15T10:00:00.000',0.5,'ACTIVE',true,false);
+INSERT INTO tb_coupon (id, code, description, expiration_date, discount_value, status, published, redeemed) VALUES ('a1f3d8b9-3c2a-4e88-8a77-9b1c2d3e4444','GHI789','Inactive Coupon','2025-12-31T23:59:59.000',0.6,'INACTIVE',false,true);
